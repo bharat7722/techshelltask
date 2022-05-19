@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Navbar from './components/Navbar';
+import FetchData from './pages/FetchData';
+import AddCustomer from './pages/AddCustomer';
+import PostJob from './pages/PostJob';
+import AddMobile from './pages/AddMobile';
+import UpdateProfilePic from './pages/UpdateProfilePic';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Navbar/>
+     <Routes>
+       <Route path="/" element={<FetchData/>}/>
+       <Route path="/add-customer" element={<AddCustomer/>}/>
+       <Route path="/post-job" element={<PostJob/>}/>
+       <Route path="/add-mobile" element={<AddMobile/>}/>
+       <Route path="/update-profile" element={<UpdateProfilePic/>}/>
+     </Routes>
+    </BrowserRouter>
   );
 }
 
